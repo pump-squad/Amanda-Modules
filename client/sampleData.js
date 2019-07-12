@@ -8,6 +8,7 @@ const sampleData = {
   "description": "Super lightweight and easily packableclimbers that is slim-fitting, and stylish. Designed for everyday wear.",
   "rating": "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Screenshot+at+Jul+11+15-25-58.png",
   "reviews": 9,
+  "price": 350,
   "images": {
       "colors": [
           "Shrek Green",
