@@ -6,9 +6,9 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server/index.js",
-    "build": "webpack -d --watch",
-    "seed": "node database/seeder.js",
+    "server": "nodemon server/index.js",
+    "webpack": "webpack -d --watch",
+    "seed": "node database/seed/seeder.js",
     "test": "jest"
   },
   "dependencies": {

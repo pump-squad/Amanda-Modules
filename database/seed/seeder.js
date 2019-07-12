@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const Product = require('./index.js');
+const Product = require('../index.js');
 const imageData = require('./imageData.js');
 
-// Returns the value for a random index in an array, or:
-// To return random integer only, pass in a falsy value for first argument.
+// Returns either a) the value for a random index in an array, or
+// b) a random integer only (by passing in a falsy value for first argument)
 var randomizer = (array, maximum) => {
   let max = maximum || array.length - 1;
   let randomNum = Math.floor(Math.random() * ( max + 1 ));
@@ -27,8 +27,7 @@ var nameGenerator = () => {
 
 // Returns a random product description (string).
 var descriptionGenerator = () => {
-  const descriptors = ['Super lightweight and easily packable ', 'Extremely durable but flexible ', 
-    'Versatile, midweight ', 'Lightweight but warm '];
+  const descriptors = ['Super lightweight and easily packable', 'Extremely durable but flexible', 'Versatile, midweight', 'Lightweight but warm'];
   const items = ['shell ', ' jacket', ' boots', ' pack',  'climbers', ' layer', ' puffer', ' vest'];
   const enders = [' designed for extended use in extreme temperatures.', ' optimal for use in temperate conditions.', 
     ' that is built to last, and is completely waterproof.', ' that is slim-fitting, and stylish. Designed for everyday wear.',
@@ -39,14 +38,18 @@ var descriptionGenerator = () => {
 
 // Returns a random url representing an image of a stars rating out of 5 (string).
 var ratingGenerator = () => {
-  // fill with a handful of urls to images hosted on S3 of various star ratings
-  const starsUrls = [] ;
+  const starsUrls = [
+    "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Screenshot+at+Jul+11+15-25-22.png",
+    "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Screenshot+at+Jul+11+15-25-58.png",
+    "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Screenshot+at+Jul+11+15-26-23.png",
+    "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Screenshot+at+Jul+11+15-26-46.png"
+  ];
   return randomizer(starsUrls);
 };
 
 // Returns a random integer of total reviews for a given product.
 var reviewsGenerator = () => {
-  return randomizer(0, 100);
+  return randomizer(0, 50);
 };
 
 // Returns an array of objects with randomized size and availability properties.
@@ -65,38 +68,37 @@ var sizesGenerator = () => {
 };
 
 // Returns a random color name in Arc'teryx style (string).
-// 75%+ of these are ACTUALLY from the website btw. So pretentious.
-var colorsGenerator = () => {
+var colorGenerator = () => {
   const colors = [ 'Blue Sapphire', 'Santorini', 'Savannah', 'Macaw', 'Aurora', 'Triton', 'Kirigami', 'Cloudburst',
     'Black Sapphire', 'Continuum', 'Coral', 'Firoza', 'Pegasus', 'Caribou', 'Larix', 'Tui', 'Zaffre', 'Infrared', 
     'Aquamarine', 'Shrek Green', 'Olympus', 'Raven', 'Everblade', 'Nocturne', 'Ufuk', 'Neurostorm', 'Mongoose', 'Redux' ];
-  return [ randomizer(colors), randomizer(colors), randomizer(colors) ];
+  return randomizer(colors);
 };
 
-// Returns an array of string urls -- each url is one image in a matching set for a given product.
-// Currently, I have hardcoded this to return one array of image urls, to prevent running my monthly AWS
-// allottment to zero via testing.
+// Returns an object with two properties--
+// 1) thumbnails: an array of objects that each contain a randomly generated color and matching image url.
+// 2) urls: the matching set of url strings for all photos for a given product.
+// See imageData.js for data that this is derived from.
 var imagesGenerator = () => {
-  return [ 'https://images-dynamic-arcteryx.imgix.net/S19/1350x1710/Kadem-Tank-W-Continuum.jpg?auto=format&w=1350',
-    'https://images-dynamic-arcteryx.imgix.net/S19/1350x1710/Kadem-Tank-W-Nightshadow.jpg?auto=format&w=1350',
-    'https://images-dynamic-arcteryx.imgix.net/S19/1350x1710/Kadem-Tank-W-Electrolyte.jpg?auto=format&w=1350',
-    'https://images-dynamic-arcteryx.imgix.net/details/1350x1710/Kadem-Tank-Women-s-Nightshadow-Neckline.jpg?auto=format&w=1350',
-    'https://images-dynamic-arcteryx.imgix.net/details/1350x1710/Kadem-Tank-Women-s-Nightshadow-Front-View.jpg?auto=format&w=1350',
-    'https://images-dynamic-arcteryx.imgix.net/details/1350x1710/Kadem-Tank-Women-s-Nightshadow-Back-View.jpg?auto=format&w=1350']
-  // will be refactored eventually to return a random set of image urls.
+  let imageSet = randomizer(imageData);
+  let package = { colors: [], thumbnails: imageSet.thumbnails, urls: imageSet.images };
+  for (let i = 0; i < imageSet.thumbnails.length; i++) {
+    package.colors.push(colorGenerator());
+  }
+  return package;
 };
 
 // Returns an array of 100 randomly  generated product objects formatted to be stored in Mongo database.
 var seedDataGenerator = () => {
   let arr = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 1; i <= 100; i++) {
     arr.push({
+      index: i,
       name: nameGenerator(),
       description: descriptionGenerator(),
       rating: ratingGenerator(),
       reviews: reviewsGenerator(),
       sizes: sizesGenerator(),
-      colors: colorsGenerator(),
       images: imagesGenerator()
     })
   }
@@ -104,7 +106,10 @@ var seedDataGenerator = () => {
 }
 
 const seeder = () => {
-    Product.create(seedDataGenerator())
+  Product.insertMany(seedDataGenerator(), function(error, docs) {
+    if (error) { console.log('Error seeding', error); }
+    else { console.log('Successfully seeded data')}
+    })
     .then( () => {
         console.log('Database seeded!');
         mongoose.connection.close();
