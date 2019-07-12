@@ -13,6 +13,7 @@ const productSchema = mongoose.Schema({
   index: Number, // each item will be given a unique integer index
   name: String,
   description: String,
+  price: Number,
   rating: String, // stars, out of 5
   reviews: Number, // number of total reviews on product
   sizes: [ { size: String, in_stock: Number } ],
