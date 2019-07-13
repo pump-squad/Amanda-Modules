@@ -27,8 +27,8 @@ const nameGenerator = () => {
 
 // Returns a random product description (string).
 const descriptionGenerator = () => {
-  const descriptors = ['Super lightweight and easily packable ', 'Extremely durable but flexible ', 'Versatile, midweight ', 'Lightweight but warm '];
-  const items = ['shell ', ' jacket', ' boots', ' pack',  'climbers', ' layer', ' puffer', ' vest'];
+  const descriptors = ['Super lightweight and easily packable', 'Extremely durable but flexible', 'Versatile, midweight', 'Lightweight but warm'];
+  const items = [' shell', ' jacket', ' boots', ' pack',  'climbers', ' layer', ' puffer', ' vest'];
   const enders = [' designed for extended use in extreme temperatures.', ' optimal for use in temperate conditions.', 
     ' that is built to last, and is completely waterproof.', ' that is slim-fitting, and stylish. Designed for everyday wear.',
     ', and is wind and moisture-resistant. Keeps you warm in frigid temperatures.', ', designed for severe mountain conditions.',
