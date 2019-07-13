@@ -4,52 +4,38 @@ import ProductInfo from './ProductInfo/ProductInfo.jsx';
 import axios from 'axios';
 
 class App extends React.Component {
-  
-  // for rendering with fake data
   constructor(props) {
     super(props);
-    let {name, description, rating, reviews, price, images, sizes } = this.props;
     this.state = {
-      name,
-      description,
-      rating,
-      reviews,
-      price,
-      images, 
-      sizes,
-      currentImage: ''
+      dataLoaded: false,
+      name: '',
+      description: '',
+      rating: 0,
+      reviews: 0,
+      price: 0,
+      images: {},
+      sizes: [],
+      currentImage: {},
+      currentSize: null
     }
   }
-
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     name: '',
-  //     description: '',
-  //     rating: 0,
-  //     reviews: 0,
-  //     price: 0,
-  //     images: [],
-  //     sizes: [],
-  //     currentImage: ''
-  //   }
-  //   this.function = this.function.bind(this);
-  // }
 
   // Fetches data from API/database, and triggers re-render once this is complete.
   componentDidMount() {
     axios
       .get('/api/viewer/products')
       .then( ({data}) => {
-        console.log('this is the data being returned within componentDidMount!', data);
+        let {name, description, rating, reviews, price, images, sizes} = data;
         this.setState({
+          dataLoaded: true,
           name,
           description,
           rating,
           reviews,
           price,
-          images, 
-          sizes
+          images,
+          sizes,
+          currentImage: { url: images.thumbnails[0], key: 0 }
         }, console.log('Successfully fetched item data'))
       })
       .catch( err => {
@@ -57,15 +43,34 @@ class App extends React.Component {
       })
   }
 
+  changeCurrentImage(url, key) {
+    this.setState({
+      currentImage: { url, key }
+    });
+  };
+
+  changeCurrentSize(size, stock) {
+    let phrase;
+    (stock) ? (phrase = ' - In Stock') : (phrase = ' - Sold Out');
+    this.setState({
+      currentSize: size + phrase
+    })
+  };
+
   render() {
+    if (this.state.dataLoaded) {
     return (
       <div>
         <ProductViewer images={this.state.images}/>
-        <ProductInfo data={this.state}/> 
-        {/* double check that this will work!! ^^^ */}
+        <ProductInfo 
+          details={this.state} 
+          changeCurrentImage={this.changeCurrentImage.bind(this)}
+          changeCurrentSize={this.changeCurrentSize.bind(this)}/> 
       </div>
-    )
-  }
+    )} else {
+      return (<div><img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"></img></div>)
+    }
+  };
 }
 
 export default App;
