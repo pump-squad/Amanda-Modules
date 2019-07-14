@@ -8,11 +8,10 @@ const ColorSelector = (props) => {
     <div>
       <div>
       {colors.map((color, i) =>
-        <SingleColor color={color} number={i}
+        <SingleColor color={color} number={i} key={i}
         changeCurrentImage={props.changeCurrentImage} 
         currentImage={props.currentImage}
-        thumbnail={thumbnails[i]}
-         />
+        thumbnail={thumbnails[i]} />
       )}
       </div>
       <div>

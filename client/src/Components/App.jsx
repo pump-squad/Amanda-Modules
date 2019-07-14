@@ -43,12 +43,14 @@ class App extends React.Component {
       })
   }
 
+  // Updates the image showing in the ProductViewer, triggered by user click on color thumbnails
   changeCurrentImage(url, key) {
     this.setState({
       currentImage: { url, key }
     });
   };
 
+  // Updates the selected size via user click on different sizes
   changeCurrentSize(size, stock) {
     let phrase;
     (stock) ? (phrase = ' - In Stock') : (phrase = ' - Sold Out');
@@ -59,15 +61,16 @@ class App extends React.Component {
 
   render() {
     if (this.state.dataLoaded) {
-    return (
-      <div>
-        <ProductViewer images={this.state.images}/>
+      return (
+        <div>
+        <ProductViewer images={this.state.images} currentImage={this.state.currentImage.url}/>
         <ProductInfo 
           details={this.state} 
           changeCurrentImage={this.changeCurrentImage.bind(this)}
           changeCurrentSize={this.changeCurrentSize.bind(this)}/> 
       </div>
     )} else {
+      // If the data from the API call hasn't loaded yet, render a loading gif.
       return (<div><img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif"></img></div>)
     }
   };
