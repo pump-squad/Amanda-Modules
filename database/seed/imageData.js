@@ -431,23 +431,6 @@ const imageData = [
 
   { 
     thumbnails: [
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/RUSSET+SHORT+12+MEN'S/Russet-Short-12-Larix.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/RUSSET+SHORT+12+MEN'S/Russet-Short-12-Tui.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/RUSSET+SHORT+12+MEN'S/Russet-Short-12-Owami.jpg"
-    ],
-    images: [ 
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/RUSSET+SHORT+12+MEN'S/Russet-Short-12-Larix.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/RUSSET+SHORT+12+MEN'S/Russet-Short-12-Tui.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/RUSSET+SHORT+12+MEN'S/Russet-Short-12-Owami.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/RUSSET+SHORT+12+MEN'S/Russet-Short-12-Owami-Front-View.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/RUSSET+SHORT+12+MEN'S/Russet-Short-12-Owami-Back-View.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/RUSSET+SHORT+12+MEN'S/Russet-Short-12-Owami-Outfit.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/RUSSET+SHORT+12+MEN'S/Russet-Short-12-Owami-External-Pocket-Back.jpg"
-    ]
-  },
-
-  { 
-    thumbnails: [
       "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Sidewinder-Jacket-Olive-Amber.jpg",
       "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Sidewinder-Jacket-Red-Beach.jpg",
       "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Sidewinder-Jacket-Tui.jpg"
