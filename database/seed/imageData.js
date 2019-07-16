@@ -382,17 +382,17 @@ const imageData = [
 
   { 
     thumbnails: [
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com//Norvan-SL-GTX-Shoe-W-Aurora-Infrared.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com//Norvan-SL-GTX-Shoe-W-Black-Sapphire-Continuum.jpg"
+      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Norvan-SL-GTX-Shoe-W-Aurora-Infrared.jpg",
+      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Norvan-SL-GTX-Shoe-W-Black-Sapphire-Continuum.jpg"
     ],
     images: [ 
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com//Norvan-SL-GTX-Shoe-W-Aurora-Infrared.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com//Norvan-SL-GTX-Shoe-W-Black-Sapphire-Continuum.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com//Norvan-SL-GTX-Shoe-Women-s-Aurora-Infrared-Front-View.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com//Norvan-SL-GTX-Shoe-Women-s-Aurora-Infrared-Side-View.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com//Norvan-SL-GTX-Shoe-Women-s-Aurora-Infrared-Back-View.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com//Norvan-SL-GTX-Shoe-Women-s-Aurora-Infrared-Top-View.jpg",
-      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com//Norvan-SL-GTX-Shoe-Women-s-Aurora-Infrared-Sole.jpg"
+      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Norvan-SL-GTX-Shoe-W-Aurora-Infrared.jpg",
+      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Norvan-SL-GTX-Shoe-W-Black-Sapphire-Continuum.jpg",
+      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Norvan-SL-GTX-Shoe-Women-s-Aurora-Infrared-Front-View.jpg",
+      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Norvan-SL-GTX-Shoe-Women-s-Aurora-Infrared-Side-View.jpg",
+      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Norvan-SL-GTX-Shoe-Women-s-Aurora-Infrared-Back-View.jpg",
+      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Norvan-SL-GTX-Shoe-Women-s-Aurora-Infrared-Top-View.jpg",
+      "https://hrla30fecamanda.s3-us-west-1.amazonaws.com/Norvan-SL-GTX-Shoe-Women-s-Aurora-Infrared-Sole.jpg"
     ]
   },
 
