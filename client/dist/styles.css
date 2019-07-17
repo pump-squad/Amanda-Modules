@@ -5,14 +5,16 @@ body {
   font-size: 15px
 }
 
-#app {
+#app-dynamic {
   display: inline-flex;
   justify-content: space-between
 }
 
 p {
   text-align: center;
-  margin: 0
+  margin: 0;
+  line-height: 1.75;
+  padding-bottom: 12px
 }
 
 .horiz-container {
@@ -34,13 +36,30 @@ p {
 
 /*----------------------------PRODUCT INFO STYLING----------------------------*/
 
+#product-path {
+  font-size: 14px;
+  left: 40px;
+  position: absolute;
+  padding-bottom: 25px
+}
+
+.productInfo {
+  width: 35%;
+  padding-left: 70px;
+  padding-right: 100px;
+  padding-bottom: 70px;
+  padding-top: 30px
+}
+
 #productName {
   font-size: 29px;
   font-weight: 475;
+  padding-bottom: 0px;
 }
 
-#usd , #price {
-  font-weight: 550
+#usd , #price, #freeShip {
+  font-weight: 550;
+  padding-top: 17px
 }
 
 #price {
@@ -48,7 +67,7 @@ p {
 }
 
 #starsImg {
-  max-height: 17px
+  max-height: 17px;
 }
 
 #reviewSpan {
@@ -56,16 +75,15 @@ p {
   margin-bottom: 4px
 }
 
-#writeAReview:hover, #sizingChart:hover, #findInStore {
+#writeAReview:hover, #sizingChart:hover, #findInStore, #underlined {
   text-decoration: underline;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .sizeContainer_true {
   height: 42px;
   width: 42px;
   border: 1px solid black;
-  /* color: black; */
   margin: 6px;
   display: inline-flex;
   justify-content: center;
@@ -76,7 +94,7 @@ p {
   height: 42px;
   width: 42px;
   border: 1px solid #b3b3b3;
-  background-image: url("./images/outofstock.png");
+  background-image: url("./images/outofstock.jpg");
   background-size: contain;
   color: #b3b3b3;
   margin: 4px;
@@ -111,7 +129,7 @@ p {
   font-size: 15px;
   width: 100%;
   border: 2px solid black;
-  height: 50px
+  height: 50px;
 }
 
 #addToCart:hover {
@@ -123,11 +141,11 @@ p {
 /*----------------------------PRODUCT VIEWER STYLING----------------------------*/
 
 .productViewer {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
-  max-width: 50%;
-  cursor: zoom-in
+  cursor: zoom-in;
+  padding-left: 150px;
+  padding-right: 70px;
+  padding-top: 30px;
+  max-width: 35%
 }
 
 #currentImage {
@@ -205,4 +223,17 @@ p {
   color: white;
   border-color: transparent;
   font-size: 15px
+}
+
+/*----------------------------STATIC COMPONENT STYLING----------------------------*/
+
+#youMayLike, #static-name {
+  font-size: 25px;
+  padding-bottom: 10px
+}
+
+.static {
+  max-width: 55%;
+  align-self: center;
+  padding-bottom: 30px
 }

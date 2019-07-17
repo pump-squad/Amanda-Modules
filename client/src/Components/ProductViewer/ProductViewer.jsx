@@ -23,9 +23,9 @@ class ProductViewer extends Component {
 
   render() {
     return(
-      <div className="productViewer">Product Viewer!
+      <div className="productViewer">
         <div className="mainImage" onClick={this.handleClick.bind(this)}>
-          <img src={this.props.currentImage}></img>
+          <img src={this.props.currentImage} id="currentImage"></img>
         </div>
         <ToggleModal showModal={this.state.showModal} 
           images={this.props.images} 

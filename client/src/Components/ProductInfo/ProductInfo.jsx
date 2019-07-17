@@ -4,13 +4,17 @@ import ColorSelector from './ColorSelector/ColorSelector.jsx';
 import ProductDetails from './ProductDetails.jsx';
 
 const ProductInfo = (props) => {
-  let { sizes, images, currentSize, currentImage } = props.details;
+  let { sizes, images, currentSize, currentImage, currentColor } = props.details;
 
   return (
-    <div className="productInfo">
+    <div className="productInfo vert-container">
       <ProductDetails details={props.details}/>
+      <ColorSelector images={images} 
+        changeCurrentImage={props.changeCurrentImage} 
+        changeCurrentColor={props.changeCurrentColor}
+        currentImage={currentImage}
+        currentColor={currentColor}/>
       <SizeSelector sizes={sizes} changeCurrentSize={props.changeCurrentSize} currentSize={currentSize}/>
-      <ColorSelector images={images} changeCurrentImage={props.changeCurrentImage} currentImage={currentImage}/>
     </div>
   )
  }

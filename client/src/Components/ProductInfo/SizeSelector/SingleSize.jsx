@@ -9,8 +9,8 @@ const SingleSize = (props) => {
   }
 
   return (
-    <span className="sizesContainer" onClick={handleSizeClick}>
-      <span className="singleSize" id={in_stock}>
+    <span className={`sizeContainer_${Boolean(in_stock)}`} onClick={handleSizeClick}>
+      <span className="singleSize">
         {size}
       </span>
     </span>

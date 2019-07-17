@@ -4,20 +4,20 @@ const ProductDetails = (props) => {
   let { name, description, rating, reviews, price } = props.details;
 
   return (
-    <div className="productDetails">
-      <div className="productRatingAndReviews">
-        <span id="starsSpan">
-          <img src={rating} alt="Star rating"></img>
+    <div className="productDetails vert-container">
+      <div className="productRatingAndReviews horiz-container">
+        <span>
+          <img src={rating} alt="Star rating" id="starsImg"></img>
         </span>
         <span id="reviewSpan">
-          {` (${reviews}) | Write a Review`}
+          <span>{` (${reviews}) | `}</span><span id="writeAReview">Write A Review</span>
         </span>
       </div>
-      <h1 className="productName">{name.toUpperCase()}</h1>
-      <p className="productDescription">{description}</p>
-      <p className="productPrice">
+      <p id="productName">{name.toUpperCase()}</p>
+      <p id="productDescription">{description}</p>
+      <p id="productPrice">
         <span id="usd">USD</span>
-        <span id="price">{`$${price}.00`}</span>
+        <span id="price">{` $${price}.00`}</span>
       </p>
     </div>
   )
