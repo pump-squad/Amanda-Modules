@@ -6,9 +6,9 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon server/index.js",
-    "build": "webpack -d --watch",
-    "seed": "node database/seeder.js",
+    "server": "nodemon server/index.js",
+    "webpack": "webpack -d --watch",
+    "seed": "node database/seed/seeder.js",
     "test": "jest"
   },
   "dependencies": {
@@ -19,15 +19,18 @@
     "babel-preset-react": "^6.23.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "file-loader": "^4.0.0",
     "mongoose": "^4.9.6",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "webpack": "^2.2.1",
-    "jest": "^24.8"
+    "react-icons": "^3.7.0",
+    "url-loader": "^2.0.1",
+    "webpack": "^2.2.1"
   },
   "devDependencies": {
-    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor"
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "jest": "^24.8.0"
   }
 }

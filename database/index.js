@@ -10,13 +10,14 @@ mongoose.connect('mongodb://localhost/Product', { useMongoClient: true })
   })
 
 const productSchema = mongoose.Schema({
+  index: Number, // each item will be given a unique integer index
   name: String,
   description: String,
-  rating: Number, // stars, out of 5
+  price: Number,
+  rating: String, // stars, out of 5
   reviews: Number, // number of total reviews on product
   sizes: [ { size: String, in_stock: Number } ],
-  colors: [ String ],
-  images: [ String ]
+  images: { thumbnails: [ String ], urls: [ String ], colors: [ String ] }
 })
 
 const Product = mongoose.model('Product', productSchema);

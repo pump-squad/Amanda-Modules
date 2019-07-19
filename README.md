@@ -1,6 +1,6 @@
 # Arc'teryx Front-End Capstone - Amanda's Modules
 
-> In this project, my teammates and I are creating a copy of an Arc'teryz web application page. We will be re-creating the aesthetics and interactivity of the page as accurately as possible--when someone opens our app, it should feel indistinguishable from the real thing. Except, in the case that we find something that we can optimize to improve performance.
+> In this project, my teammates and I are creating a copy of an Arc'teryx web application page. We will be re-creating the aesthetics and interactivity of the page as accurately as possible--when someone opens our app, it should feel indistinguishable from the real thing. Except, in the case that we find something that we can optimize to improve performance.
 
 ## Related Projects
 
@@ -17,7 +17,10 @@
 
 ## Usage
 
-> Some usage instructions
+> In terminal, run 'npm install'.
+> Then, 'npm run server' (This starts the nodemon server in terminal).
+> In a separate terminal, use 'npm run seed' to seed the database that was just created.
+> In Chrome, open up a tab and go to 'localhost:2000', and elements should render onto the page!
 
 ## Requirements
 

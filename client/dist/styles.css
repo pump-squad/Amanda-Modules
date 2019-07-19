@@ -1,0 +1,239 @@
+/*----------------------------GENERAL STYLING----------------------------*/
+
+body {
+  font-family: "Avenir Next", Arial, sans-serif;
+  font-size: 15px
+}
+
+#app-dynamic {
+  display: inline-flex;
+  justify-content: space-between
+}
+
+p {
+  text-align: center;
+  margin: 0;
+  line-height: 1.75;
+  padding-bottom: 12px
+}
+
+.horiz-container {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  max-width: 100%;
+  align-self: center
+}
+
+.vert-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  align-self: center
+}
+
+/*----------------------------PRODUCT INFO STYLING----------------------------*/
+
+#product-path {
+  font-size: 14px;
+  left: 40px;
+  position: absolute;
+  padding-bottom: 25px
+}
+
+.productInfo {
+  width: 35%;
+  padding-left: 70px;
+  padding-right: 100px;
+  padding-bottom: 70px;
+  padding-top: 30px
+}
+
+#productName {
+  font-size: 29px;
+  font-weight: 475;
+  padding-bottom: 0px;
+}
+
+#usd , #price, #freeShip {
+  font-weight: 550;
+  padding-top: 17px
+}
+
+#price {
+  font-size: 20px;
+}
+
+#starsImg {
+  max-height: 17px;
+}
+
+#reviewSpan {
+  align-self: center;
+  margin-bottom: 4px
+}
+
+#writeAReview:hover, #sizingChart:hover, #findInStore, #underlined {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.sizeContainer_true {
+  height: 42px;
+  width: 42px;
+  border: 1px solid black;
+  margin: 6px;
+  display: inline-flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sizeContainer_false {
+  height: 42px;
+  width: 42px;
+  border: 1px solid #b3b3b3;
+  background-image: url("./images/outofstock.jpg");
+  background-size: contain;
+  color: #b3b3b3;
+  margin: 4px;
+  display: inline-flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#selectASize, #selectAColour {
+  font-weight: 450
+}
+
+#currentSize, #currentColour {
+  color: #777777;
+}
+
+.singleSize {
+  align-self: center;
+  font-size: 15px;
+}
+
+.singleColor {
+  max-height:70px;
+  padding: 5px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+#addToCart {
+  background: black;
+  color: white;
+  font-size: 15px;
+  width: 100%;
+  border: 2px solid black;
+  height: 50px;
+}
+
+#addToCart:hover {
+  background: linear-gradient(to bottom, #696c72 0%,#08090a 57%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#696c72', endColorstr='#08090a',GradientType=0 );
+  cursor: pointer;
+}
+
+/*----------------------------PRODUCT VIEWER STYLING----------------------------*/
+
+.productViewer {
+  cursor: zoom-in;
+  padding-left: 150px;
+  padding-right: 70px;
+  padding-top: 30px;
+  max-width: 35%
+}
+
+#currentImage {
+  max-width: 100%;
+  align-self: center;
+  max-height: 50%;
+}
+
+
+/*----------------------------MODAL STYLING----------------------------*/
+
+#modal-root {
+  position: relative;
+  z-index: 999;
+}
+
+.modal {
+  background-color:white;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+}
+
+.modalHeader {
+  top: 0;
+  display: inline-flex;
+  width: 100%;
+  height: 30px;
+  background-color: black;
+  justify-content: space-between;
+}
+
+#imageCounter {
+  align-self: center;
+  padding-left: 20px
+}
+
+.modalBody {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  position: fixed;
+  justify-content: space-between;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 90%
+}
+
+.modalImage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+}
+
+#imageCounter {
+  color: white;
+  top: 50%;
+  left: 50%;
+}
+
+.arrowButton {
+  max-height: 35px;
+  padding: 15px
+}
+
+#exitModalButton {
+  padding-right: 30px;
+  background-color: black;
+  color: white;
+  border-color: transparent;
+  font-size: 15px
+}
+
+/*----------------------------STATIC COMPONENT STYLING----------------------------*/
+
+#youMayLike, #static-name {
+  font-size: 25px;
+  padding-bottom: 10px
+}
+
+.static {
+  max-width: 55%;
+  align-self: center;
+  padding-bottom: 30px
+}
