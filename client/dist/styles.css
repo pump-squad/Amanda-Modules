@@ -235,5 +235,6 @@ p {
 .static {
   max-width: 55%;
   align-self: center;
-  padding-bottom: 30px
+  padding-bottom: 30px;
+  padding-top: 20px;
 }

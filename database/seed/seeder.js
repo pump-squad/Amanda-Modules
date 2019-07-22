@@ -63,7 +63,7 @@ const priceGenerator = () => {
 const sizesGenerator = () => {
   let results = [];
   const sizes = [ ['XXS', 'XS', 'S', 'M', 'L', 'XL','XXL'], ['S', 'M', 'L'], 
-    ['2', '4', '6', '8'], ['XS', 'S', 'M', 'L', 'XL'], ['One Size Fits All'] ];
+    ['2', '4', '6', '8'], ['XS', 'S', 'M', 'L', 'XL'] ];
   let arr = randomizer(sizes);
   for (let i = 0; i < arr.length; i++) {
     results.push({
