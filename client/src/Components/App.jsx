@@ -35,7 +35,7 @@ class App extends React.Component {
   //   axios
   //   .get('/api/viewer/products')
   //   .then( ({data}) => {
-  //     let {name, description, rating, reviews, price, images, sizes} = data;
+  //     let {name, description, rating, reviews, price, images, sizes } = data;
   //     this.setState({
   //       dataLoaded: true,
   //       name,
@@ -45,14 +45,14 @@ class App extends React.Component {
   //       price,
   //       images,
   //       sizes,
-  //       currentImage: { url: images.thumbnails[0], key: 0 }
+  //       currentImage: { url: images.thumbnails[0], key: 0 },
+  //       currentColor: images.colors[0]
   //     }, console.log('Successfully fetched item data'))
   //   })
   //   .catch( err => {
   //     console.log('There was an error getting the item data :(', err);
   //   })
   // }
-
 
   // When ready to present, COMMENT OUT THIS CODE:
   constructor(props) {
