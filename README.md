@@ -6,6 +6,9 @@
 
     - The product detail module shows information about a given product, and shows available sizes and colors.
     - The product viewer module shows one main image, and when clicked, opens up a modal for infinite-loop viewing of the available images for a product.
+    
+![Showing Product Details](http://www.giphy.com/gifs/lMmCq7H4ECL7Ox4kT9)
+![Showing Product Viewer](http://www.giphy.com/gifs/Ifsn6SMnIFAhGCS4fs)
 
 ## Related Projects
 
